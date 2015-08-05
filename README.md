@@ -2,6 +2,4 @@
 ===============
 This is a brief simulation of running a M&amp;MM 3E game, to demonstrate the variant rules for Hit Points instead of Toughness Saves. 
 
-This simulation is coded in HTML5 and Javascript, and the page itself is developed and streamlined through GitHub.
-
-First, choose a hero.
+This project is meant to combine the efforts of coding for other programs and utilizing that code to build an interactive and completely streamlined experience for comparison of methods. 
