@@ -112,7 +112,7 @@ updateCharSheet();
 document.getElementById('classChoices').innerHTML="<p>"+
 "Brute is a Powerhouse. He's incredibly strong and tough, but lacks the flashy pow." +
 "</p>"
-+'<button type="button" onclick="goto2B()">Next</button>'
++'<button type="button" onclick="gotoEnd()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
 }
@@ -126,7 +126,7 @@ document.getElementById('classChoices').innerHTML="<p>"
 +"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
 +"<p>You can see the difference the suit makes by selecting her armor setting, and compare it with the default stats shown here. </p>"
 + '<button type="button" onclick="curHero.ApplyArmor();updateCharSheet()">Armored</button>'
-+ '<button type="button" onclinc="curHero.RemoveArmor();updateCharSheet()">Unarmored</button>'
++ '<button type="button" onclick="curHero.RemoveArmor();updateCharSheet()">Unarmored</button>'
 +'<button type="button" onclick="goto2M()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 }
@@ -145,17 +145,22 @@ document.getElementById('attrValPre').innerHTML=curHero.Pre;
 }
 
 function goto2M()	{
+
+document.getElementById('attrValStr').innerHTML=curHero.ApplyArmor.Str;
+document.getElementById('attrValSta').innerHTML=curHero.ApplyArmor.Sta;
+document.getElementById('attrValDex').innerHTML=curHero.ApplyArmor.Dex;
+document.getElementById('attrValAgl').innerHTML=curHero.ApplyArmor.Agl;
+document.getElementById('attrValFgt').innerHTML=curHero.ApplyArmor.Fgt;
+document.getElementById('attrValInt').innerHTML=curHero.ApplyArmor.Int;
+document.getElementById('attrValAwe').innerHTML=curHero.ApplyArmor.Awe;
+document.getElementById('attrValPre').innerHTML=curHero.ApplyArmor.Pre;
+
 document.getElementById('classChoices').innerHTML="<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
 +"<p>We've kept her armor on for this demo.</p>"
 +'<button type="button" onclick="gotoEnd()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Restart</button>';
 }
 
-function goto2B()	{
-document.getElementById('classChoices').innerHTML="<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
-+'<button type="button" onclick="gotoEnd()">Next</button>'
-+'<button type="button" onclick="gotoStart()">Restart</button>';
-}
 
 function gotoStart()	{
 document.getElementById('classChoices').innerHTML="<p>Click on one of the characters to begin!</p>"
