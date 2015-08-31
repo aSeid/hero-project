@@ -47,7 +47,7 @@
 
 <h3> 
 <a id="class-choices" class="anchor" href="#class-choices" aria-hidden="true"><span class="octicon octico-link"></span></a>Class Choices</h4>
-<p id="class-choices">
+<p id="classChoices">
 <p>Click on one of the characters to begin!</p>
 <button type="button" onclick="setBrute()">Brute</button>
 <button type="button" onclick="setMechanitrix()">Mechanitrix</button>
@@ -55,7 +55,7 @@
 
 <h3>
 <a id="char-sheet" class="anchor" href="#char-sheet" aria-hidden="true"><span class="octicon octio-link"></span></a>Character Sheet</h3>
-<p id="char-sheet">
+<p id="charSheet">
 <table>
 	<tr>
 		<td>Name:</td>
@@ -101,13 +101,13 @@
 var curHero;
 
 function setBrute() {
-document.getElementById('class-choices').innerHTML="<p>"+
+document.getElementById('classChoices').innerHTML="<p>"+
 "Brute is a Powerhouse. He's incredibly strong and tough, but lacks the flashy pow." +
 "</p>"
 +'<button type="button" onclick="goto2B()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
-document.getElementById('char-sheet');
+document.getElementById('charSheet');
 curHero=hero_Brute;
 updateCharSheet();
 
@@ -115,7 +115,7 @@ updateCharSheet();
 
 function setMechanitrix() {
 
-document.getElementById('class-choices').innerHTML="<p>"
+document.getElementById('classChoices').innerHTML="<p>"
 +"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
 +"<p>You can see the difference the suit makes by selecting her armor setting, and compare it with the default stats shown here. </p>"
 + '<button type="button" onclick="curHero.ApplyArmor();updateCharSheet()">Armored</button>'
@@ -123,7 +123,7 @@ document.getElementById('class-choices').innerHTML="<p>"
 +'<button type="button" onclick="goto2M()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
-document.getElementById('char-sheet');
+document.getElementById('charSheet');
 curHero=hero_Mechanitrix;
 updateCharSheet();
 }
@@ -142,23 +142,23 @@ document.getElementById('attrValePre').innerHTML=curHero.Pre;
 }
 
 function goto2M()	{
-document.getElementById('class-choices').innerHTML="<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
+document.getElementById('classChoices').innerHTML="<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
 +"<p>We've kept her armor on for this demo.</p>"
 +'<button type="button" onclick="gotoEnd()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Restart</button>';
 }
 
 function goto2B()	{
-document.getElementById('class-choices').innerHTML="<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
+document.getElementById('classChoices').innerHTML="<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
 +'<button type="button" onclick="gotoEnd()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Restart</button>';
 }
 
 function gotoStart()	{
-document.getElementById('class-choices').innerHTML="<p>Click on one of the characters to begin!</p>"
+document.getElementById('classChoices').innerHTML="<p>Click on one of the characters to begin!</p>"
 +'<button type="button" onclick="setBrute()">Brute</button>'
 +'<button type="button" onclick="setMechanitrix()">Mechanitrix</button>';
-document.getElementById('char-sheet').innerHTML=
+document.getElementById('charSheet').innerHTML=
 "<table>"
 +'	<tr>'
 +'		<td>Name:</td>'
@@ -200,7 +200,7 @@ document.getElementById('char-sheet').innerHTML=
 }
 
 function gotoEnd()	{
-document.getElementById('class-choices').innerHTML="<p>This is the end of the demo for now; check back soon for more!</p>"
+document.getElementById('classChoices').innerHTML="<p>This is the end of the demo for now; check back soon for more!</p>"
 +'<form action=""><input type="submit" value="Restart"></form>';
 }
 
