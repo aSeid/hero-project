@@ -35,19 +35,179 @@
 
 <p>This page is meant to provide a brief example of a Mutants and Masterminds game, using rules in the third edition of the game, to demonstrate variant rules for Hit Points rather than Toughness saves.</p>
 
-<h2>
+<h3>
 <a id="why-we-built-this" class="anchor" href="#why-we-built-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why We Built This</h3>
 
 <p>Using GitHub to create a launching point for the site, and combined efforts from two people who enjoy both working on programs such as this one as well as streamlining the actual gameplay of RPGs, the authors of this particular page welcome you to enjoy the fruits of their labors and run a simple simulation, using revised rules of damage calculations rather than the skill checks and complex calculations used in the published ruleset.</p>
 
-<h2>
+<h3>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h3>
 <p>The first in the list of variables we address is the class of character chosen. Each class has different strengths and weaknesses, described as different bonuses to each skill value.</p>
 <p>In the standard rules written for the third edition of Mutants and Masterminds, damage taken by the character is directly related to the Toughness skill of the character in question, and is augmented and calculated through various other bonus values given by the other, more complicating variables. For now, we're starting with just the classes in question. </p>
 
-<h4> <a id="class-choices" class="anchor" href="#class-choices" aria-hidden="true"><span class="octicon octico-link"></span></a>Class Choices</h4>
+<h3> 
+<a id="class-choices" class="anchor" href="#class-choices" aria-hidden="true"><span class="octicon octico-link"></span></a>Class Choices</h4>
+<p id="class-choices">
+<p>Click on one of the characters to begin!</p>
+<button type="button" onclick="setBrute()">Brute</button>
+<button type="button" onclick="setMechanitrix()">Mechanitrix</button>
+</p>
 
+<h3>
+<a id="char-sheet" class="anchor" href="#char-sheet" aria-hidden="true"><span class="octicon octio-link"></span></a>Character Sheet</h3>
+<p id="char-sheet">
+<table>
+	<tr>
+		<td>Name:</td>
+		<td id="name"></td>
+	</tr>
+	<tr>
+		<td>Real Name:</td>
+		<td id="realName"></td>
+	</tr>
+	<tr>
+		<td>Strength:</td>
+		<td id="attrValSta"></td>
+	</tr>
+	<tr>
+		<td>Agility:</td>
+		<td id="attrValAgl"></td>
+	</tr>
+	<tr>
+		<td>Dexterity:</td>
+		<td id="attrValDex"></td>
+	</tr>
+	<tr>
+		<td>Fighting:</td>
+		<td id="attrValFgt"></td>
+	</tr>
+	<tr>
+		<td>Intellect:</td>
+		<td id="attrValInt"></td>
+	</tr>
+	<tr>
+		<td>Awarenes:</td>
+		<td id="attrValAwe"></td>
+	</tr>
+	<tr>
+		<td>Charisma:</td>
+		<td id="attrValPre"></td>
+	</tr>
+</table>
+	</p>
 
+<script>
+
+var curHero;
+
+function setBrute() {
+document.getElementById('char-sheet').style.display = "block";
+curHero=hero_Brute;
+updateCharSheet();
+
+document.getElementById('class-choices').innerHTML="<p>"+
+"Brute is a Powerhouse. He's incredibly strong and tough, but lacks the flashy pow." +
+"</p>"
++'<button type="button" onclick="goto2B()">Next</button>'
++'<button type="button" onclick="gotoStart()">Back</button>';
+
+}
+
+fucntion setMechanitrix() {
+document.getElementById('char-sheet').style.display="block";
+curHero=hero_Mechanitrix;
+updateCharSheet();
+
+document getElementById('class-choices').innerHTML="<p>"+
+"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
++"<p>You can see the difference the suit makes by selecting her armor setting, and compare it with the default stats shown here. </p>"
++ '<button type="button" onclick="curHero.ApplyArmor();updateCharSheet()">Armored</button>'
++ '<button type="button" onclinc="curHeron.RemoveArmor();updateCharSheet()">Unarmored</button>'
++'<button type="button" onclick="goto2M()">Next</button>'
++'<button type="button" onclick="gotoStart()">Back</button>';
+}
+
+function updateCharSheet() {
+document.getElementById('name').innerHTML = curHero.Name;
+document.getElementById('realName').innerHTML=curHero.RealName;
+document.getElementById('attrValStr').innerHTML=curHero.Str;
+document.getElementById('attrValSta').innerHTML=curHero.Str;
+document.getElementById('attrValDex').innerHTML=curHero.Dex;
+document.getElementById('attrValAgl').innerHTML=curHero.Agl;
+document.getElementById('attrValFgt').innerHTML=curHero.Fgt;
+document.getElementById('attrValInt').innerHTML=curHero.Int;
+document.getElementById('attrValAwe').innerHTML=curHero.Awe;
+document.getElementById('attrValePre').innerHTML=curHero.Pre;
+}
+
+function goto2M()	{
+document.getElementById('class-choices').innerHTML="
+<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
++"<p>We've kept her armor on for this demo.</p>"
++'<button type="button" onclick="gotoEnd()">Next</button>'
++'<button type="button" onclick="gotoStart()">Restart</button>
+}
+
+function goto2B	{
+document.getElementById('class-choices').innerHTML="
+<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
++'<button type="button" onclick="gotoEnd()">Next</button>'
++'<button type="button" onclick="gotoStart()">Restart</button>
+}
+
+function gotoStart()	{
+document.getElementById('class-choices').innerHTML="
+<p>Click on one of the characters to begin!</p>"
++'<button type="button" onclick="setBrute()">Brute</button>'
++'<button type="button" onclick="setMechanitrix()">Mechanitrix</button>'
+document.getElementById('char-sheet').innerHTML="
+<table>
+	<tr>
+		<td>Name:</td>
+		<td id="name"></td>
+	</tr>
+	<tr>
+		<td>Real Name:</td>
+		<td id="realName"></td>
+	</tr>
+	<tr>
+		<td>Strength:</td>
+		<td id="attrValSta"></td>
+	</tr>
+	<tr>
+		<td>Agility:</td>
+		<td id="attrValAgl"></td>
+	</tr>
+	<tr>
+		<td>Dexterity:</td>
+		<td id="attrValDex"></td>
+	</tr>
+	<tr>
+		<td>Fighting:</td>
+		<td id="attrValFgt"></td>
+	</tr>
+	<tr>
+		<td>Intellect:</td>
+		<td id="attrValInt"></td>
+	</tr>
+	<tr>
+		<td>Awarenes:</td>
+		<td id="attrValAwe"></td>
+	</tr>
+	<tr>
+		<td>Charisma:</td>
+		<td id="attrValPre"></td>
+	</tr>
+</table>"
+}
+
+fucntion gotoEnd()	{
+document.getElementById('class-choices').innerHTML="
+<p>This is the end of the demo for now; check back soon for more!</p>"
++'<form action=""><input type="submit" value="Restart"></form>';
+}
+
+</script>
       </section>
     </div>
 
