@@ -106,19 +106,21 @@
 var curHero;
 
 function setBrute() {
+document.getElementById('charSheet');
+curHero=hero_Brute;
+updateCharSheet();
 document.getElementById('classChoices').innerHTML="<p>"+
 "Brute is a Powerhouse. He's incredibly strong and tough, but lacks the flashy pow." +
 "</p>"
 +'<button type="button" onclick="goto2B()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
-document.getElementById('charSheet');
-curHero=hero_Brute;
-updateCharSheet();
-
 }
 
 function setMechanitrix() {
+document.getElementById('charSheet');
+curHero=hero_Mechanitrix;
+updateCharSheet();
 
 document.getElementById('classChoices').innerHTML="<p>"
 +"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
@@ -127,10 +129,6 @@ document.getElementById('classChoices').innerHTML="<p>"
 + '<button type="button" onclinc="curHero.RemoveArmor();updateCharSheet()">Unarmored</button>'
 +'<button type="button" onclick="goto2M()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
-
-document.getElementById('charSheet');
-curHero=hero_Mechanitrix;
-updateCharSheet();
 }
 
 function updateCharSheet() {
@@ -143,7 +141,7 @@ document.getElementById('attrValAgl').innerHTML=curHero.Agl;
 document.getElementById('attrValFgt').innerHTML=curHero.Fgt;
 document.getElementById('attrValInt').innerHTML=curHero.Int;
 document.getElementById('attrValAwe').innerHTML=curHero.Awe;
-document.getElementById('attrValePre').innerHTML=curHero.Pre;
+document.getElementById('attrValPre').innerHTML=curHero.Pre;
 }
 
 function goto2M()	{
