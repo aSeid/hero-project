@@ -3,7 +3,7 @@
 
   <head>
     <meta charset='utf-8'>
-    <script src="hero.js"></script>
+    <script src="./javascripts/main.js"></script>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Hero-project : working on M&amp;MM">
 
@@ -67,7 +67,7 @@
 	</tr>
 	<tr>
 		<td>Strength:</td>
-		<td id="attrValSta"></td>
+		<td id="attrValStr"></td>
 	</tr>
 	<tr>
 		<td>Agility:</td>
@@ -107,22 +107,23 @@ document.getElementById('class-choices').innerHTML="<p>"+
 +'<button type="button" onclick="goto2B()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
-document.getElemebtById('char-sheet')
+document.getElementById('char-sheet');
 curHero=hero_Brute;
 updateCharSheet();
 
 }
 
 function setMechanitrix() {
-document getElementById('class-choices').innerHTML="<p>"+
-"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
+
+document.getElementById('class-choices').innerHTML="<p>"
++"Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
 +"<p>You can see the difference the suit makes by selecting her armor setting, and compare it with the default stats shown here. </p>"
 + '<button type="button" onclick="curHero.ApplyArmor();updateCharSheet()">Armored</button>'
 + '<button type="button" onclinc="curHeron.RemoveArmor();updateCharSheet()">Unarmored</button>'
 +'<button type="button" onclick="goto2M()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
-document.getElementById('char-sheet')
+document.getElementById('char-sheet');
 curHero=hero_Mechanitrix;
 updateCharSheet();
 }
@@ -141,69 +142,65 @@ document.getElementById('attrValePre').innerHTML=curHero.Pre;
 }
 
 function goto2M()	{
-document.getElementById('class-choices').innerHTML="
-<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
+document.getElementById('class-choices').innerHTML="<p>So for this demo you'll be using Mechanitrix. Her character sheet is listed below this section, for you to see her stats.</p>"
 +"<p>We've kept her armor on for this demo.</p>"
 +'<button type="button" onclick="gotoEnd()">Next</button>'
-+'<button type="button" onclick="gotoStart()">Restart</button>
++'<button type="button" onclick="gotoStart()">Restart</button>';
 }
 
-function goto2B	{
-document.getElementById('class-choices').innerHTML="
-<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
+function goto2B()	{
+document.getElementById('class-choices').innerHTML="<p>So for this demo you'll be using Brute. His character sheet is listed below this section, for you to see his stats.</p>"
 +'<button type="button" onclick="gotoEnd()">Next</button>'
-+'<button type="button" onclick="gotoStart()">Restart</button>
++'<button type="button" onclick="gotoStart()">Restart</button>';
 }
 
 function gotoStart()	{
-document.getElementById('class-choices').innerHTML="
-<p>Click on one of the characters to begin!</p>"
+document.getElementById('class-choices').innerHTML="<p>Click on one of the characters to begin!</p>"
 +'<button type="button" onclick="setBrute()">Brute</button>'
-+'<button type="button" onclick="setMechanitrix()">Mechanitrix</button>'
-document.getElementById('char-sheet').innerHTML="
-<table>
-	<tr>
-		<td>Name:</td>
-		<td id="name"></td>
-	</tr>
-	<tr>
-		<td>Real Name:</td>
-		<td id="realName"></td>
-	</tr>
-	<tr>
-		<td>Strength:</td>
-		<td id="attrValSta"></td>
-	</tr>
-	<tr>
-		<td>Agility:</td>
-		<td id="attrValAgl"></td>
-	</tr>
-	<tr>
-		<td>Dexterity:</td>
-		<td id="attrValDex"></td>
-	</tr>
-	<tr>
-		<td>Fighting:</td>
-		<td id="attrValFgt"></td>
-	</tr>
-	<tr>
-		<td>Intellect:</td>
-		<td id="attrValInt"></td>
-	</tr>
-	<tr>
-		<td>Awarenes:</td>
-		<td id="attrValAwe"></td>
-	</tr>
-	<tr>
-		<td>Charisma:</td>
-		<td id="attrValPre"></td>
-	</tr>
-</table>"
++'<button type="button" onclick="setMechanitrix()">Mechanitrix</button>';
+document.getElementById('char-sheet').innerHTML=
+"<table>"
++'	<tr>'
++'		<td>Name:</td>'
++'		<td id="name"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Real Name:</td>'
++'		<td id="realName"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Strength:</td>'
++'		<td id="attrValSta"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Agility:</td>'
++'		<td id="attrValAgl"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Dexterity:</td>'
++'		<td id="attrValDex"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Fighting:</td>'
++'		<td id="attrValFgt"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Intellect:</td>'
++'		<td id="attrValInt"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Awarenes:</td>'
++'		<td id="attrValAwe"></td>'
++'	</tr>'
++'	<tr>'
++'		<td>Charisma:</td>'
++'		<td id="attrValPre"></td>'
++'	</tr>'
++'</table>'
 }
 
 function gotoEnd()	{
-document.getElementById('class-choices').innerHTML="
-<p>This is the end of the demo for now; check back soon for more!</p>"
+document.getElementById('class-choices').innerHTML="<p>This is the end of the demo for now; check back soon for more!</p>"
 +'<form action=""><input type="submit" value="Restart"></form>';
 }
 
