@@ -101,23 +101,19 @@
 var curHero;
 
 function setBrute() {
-document.getElementById('char-sheet').style.display = "block";
-curHero=hero_Brute;
-updateCharSheet();
-
 document.getElementById('class-choices').innerHTML="<p>"+
 "Brute is a Powerhouse. He's incredibly strong and tough, but lacks the flashy pow." +
 "</p>"
 +'<button type="button" onclick="goto2B()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
 
+document.getElemebtById('char-sheet')
+curHero=hero_Brute;
+updateCharSheet();
+
 }
 
 fucntion setMechanitrix() {
-document.getElementById('char-sheet').style.display="block";
-curHero=hero_Mechanitrix;
-updateCharSheet();
-
 document getElementById('class-choices').innerHTML="<p>"+
 "Mechanitrix is a Battlesuit. She wears a suit of power armor that grants her flight, great strength, heavey protection, and energy blasts.</p>"
 +"<p>You can see the difference the suit makes by selecting her armor setting, and compare it with the default stats shown here. </p>"
@@ -125,6 +121,10 @@ document getElementById('class-choices').innerHTML="<p>"+
 + '<button type="button" onclinc="curHeron.RemoveArmor();updateCharSheet()">Unarmored</button>'
 +'<button type="button" onclick="goto2M()">Next</button>'
 +'<button type="button" onclick="gotoStart()">Back</button>';
+
+document.getElementById('char-sheet')
+curHero=hero_Mechanitrix;
+updateCharSheet();
 }
 
 function updateCharSheet() {
